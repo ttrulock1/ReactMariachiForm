@@ -33,7 +33,6 @@ export default function PagedForm({ pages = [], onSubmit }) {
 
   return (
     <FormContainer
-      style={{ display: "flex", flexDirection: "column" }}
       onSubmit={currentPageIndex === pages.length - 1 ? handleSubmit : nextPage}
     >
       <FormFields>

@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { CenteredBlock, CredentialFormContainer } from "../components/common";
 import PagedForm from "../components/PagedForm";
 import TextInput from "../components/TextInput";
 
-export default function SignUp({onSubmit}) {
+export default function SignUp({ onSubmit }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checkPassword, setCheckPassword] = useState("");
- 
+
   const [passwordError, setPasswordError] = useState("");
 
   const pages = [
@@ -18,6 +19,7 @@ export default function SignUp({onSubmit}) {
           required
           value={email}
           onChange={setEmail}
+          width={1}
         />,
         <TextInput
           type="password"
@@ -25,6 +27,8 @@ export default function SignUp({onSubmit}) {
           required
           value={password}
           onChange={setPassword}
+          width={1}
+
         />,
         <TextInput
           type="password"
@@ -32,6 +36,8 @@ export default function SignUp({onSubmit}) {
           required
           value={checkPassword}
           onChange={setCheckPassword}
+          width={1}
+
         />,
         passwordError && <div>{passwordError}</div>
       ],
@@ -48,8 +54,8 @@ export default function SignUp({onSubmit}) {
   ];
 
   async function handleSubmit() {
-    return onSubmit({email, password})
+    return onSubmit({ email, password })
   }
 
-  return <PagedForm pages={pages} onSubmit={handleSubmit} />;
+  return <CenteredBlock><CredentialFormContainer><PagedForm pages={pages} onSubmit={handleSubmit} /></CredentialFormContainer></CenteredBlock> ;
 }

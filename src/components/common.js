@@ -38,6 +38,16 @@ export const FormContainer = styled.form`
   box-shadow: 0px 0px 2.5px rgba(15, 15, 15, 0.19);
 `;
 
+export const CredentialFormContainer= styled.div`
+  max-width: 25rem;
+`;
+
+export const CenteredBlock= styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+`
+
 export const FormFields = styled.div`
   display:flex;
   flex-wrap: wrap;
@@ -67,6 +77,7 @@ export const Input = styled.input`
   width: 100%;
   height: 42px;
   outline: none;
+  box-sizing:border-box;
   border: 1px solid rgba(200, 200, 200, 0.3);
   padding: 0px 10px;
   border-bottom: 1.4px solid transparent;

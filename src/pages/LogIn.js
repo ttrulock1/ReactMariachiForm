@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { BoxContainer } from "../components/common";
+import { BoxContainer, CenteredBlock, CredentialFormContainer } from "../components/common";
 import PagedForm from "../components/PagedForm";
 import TextInput from "../components/TextInput";
 
@@ -18,6 +18,7 @@ export default function LogIn({onSubmit}) {
           required
           value={email}
           onChange={setEmail}
+          width={1}
         />,
         <TextInput
           type="password"
@@ -25,6 +26,7 @@ export default function LogIn({onSubmit}) {
           required
           value={password}
           onChange={setPassword}
+          width= {1}
         />,
        
       ],
@@ -40,8 +42,9 @@ export default function LogIn({onSubmit}) {
     return onSubmit({email, password})
   }
 
-  return <BoxContainer> 
+  return <CenteredBlock><CredentialFormContainer>
   <PagedForm pages={pages} onSubmit={handleSubmit} />
   <Link to="/register">Register For an Account</Link>
-  </BoxContainer>;
+  </CredentialFormContainer></CenteredBlock>
+   ;
 }
