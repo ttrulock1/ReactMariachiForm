@@ -37,7 +37,9 @@ export default function PagedForm({ pages = [], onSubmit }) {
       onSubmit={currentPageIndex === pages.length - 1 ? handleSubmit : nextPage}
     >
       <FormFields>
-        {currentPage.elements.map((element) => <InputWrapper style ={{width:`${100/(element.props.width || 2)}%`}}>
+        {currentPage.elements
+        .filter(e=>e?.props)
+        .map((element) => <InputWrapper style ={{width:`${100/(element.props.width || 2)}%`}}>
           {element}
         </InputWrapper>)}
       </FormFields>
